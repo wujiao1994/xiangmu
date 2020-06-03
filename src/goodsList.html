@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/list.css">
+ 
+  <style type="text/css">
+  	.M-box{
+		
+		margin-left: 800px;
+	}
+  </style>
+</head>
+
+<body>
+  	<div class="container">
+    	<ul></ul>
+  	</div>
+  
+  
+	<div class="M-box m-style"></div>
+ 	<br><br><br><br><br><br>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.pagination.js"></script>
+  <script>
+   
+    let arr = (decodeURI(window.location.search).substring(1)).split('=');
+    console.log(arr,1111111);
+
+    getAjax(arr[1]); 
+	console.log(arr[1],222222)
+
+
+
+    function getAjax(key , page=1 ,line=8) {
+      $.ajax({
+        url: 'goods_select.php',
+        data: {
+       
+          cat_one_id: key,
+        
+          page: page,
+          
+          line: line,
+        },
+       
+        type: 'get',
+       
+        dataType: 'json',
+       
+        success(res) {
+       
+          console.log(res);
+
+        
+          let str = '';
+
+          
+          
+          res.forEach(function(item){
+            
+            str += `
+            <li class="list-item">
+              <div class="panel panel-primary">
+                <div class="panel-body">
+                  <ol class="breadcrumb">
+                    <li><a href="#">${item.cat_one_id}</a></li>
+                    <li><a href="#">${item.cat_two_id}</a></li>
+                    <li class="active">${item.cat_three_id}</li>
+                  </ol>
+                </div>
+                <div class="panel-footer">
+                  <div class="row">
+                    <div class="">
+                      <div class="thumbnail">
+                        <img
+                          src="${item.goods_big_logo}"
+                          alt="...">
+                        <div class="caption">
+                          <h3>${item.goods_name}</h3>
+                          <p>
+                            <i class="glyphicon glyphicon-yen"></i>
+                            <span>${item.goods_price}</span>
+                          </p>
+                          <p><a href="JavaScript:;" class="btn btn-primary" role="button">查找相似商品</a> 
+                             <a href="./detail.html?goods_id=${item.goods_id}" class="btn btn-danger" role="button">查看商品详情</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+          `;
+          })
+
+          
+          $('ul').html(str);
+
+
+          $('.M-box').pagination({
+            pageCount: res[0]['sumPage'],  // 总页数
+            totalData: res[0]['row'],      // 总数据
+            current:  res[0]['page'],      // 当前页
+            showData:  8,   
+            count:  2,      
+            coping:true ,  
+            homePage: '首页',    
+            endPage:  '末页' ,   
+            prevContent:  '上一页',
+            nextContent:  '下一页',
+
+           
+            callback : function(result){
+            
+              getAjax(arr[1] , result.getCurrent() ); 
+            }
+
+        });
+
+        }
+      })
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>

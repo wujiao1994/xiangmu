@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding:0;font-size: 16px;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			.center{width: 1100px;margin: 0 auto;}
+			.nav{
+				height: 30px;
+				background: #FCFCFC;
+			}
+			.navcont{
+				height: 30px;
+			}
+			.nav .pos{
+				display: block;					
+				width: 120px;
+				float: left;
+				text-align: center;
+				line-height: 30px;
+				font-size: 13px;
+			}
+			.nav .navRight{
+				float: right;
+				text-align: center;
+				line-height: 30px;
+			}
+			.nav .navRight li{
+				float: left;
+			}
+			.nav .navRight li a{
+				display: block;
+				font-size: 13px;
+				width: 90px;
+			}
+			.nav .navRight li:nth-of-type(2) a{
+				color: #ccc;
+			}
+			.nav .navRight span{
+				font-size: 13px;
+				color: red;
+			}
+			
+			
+			.oneShop{
+				width: 1200px;
+				height: 100px;
+			}
+			.oneShop img{
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin-left: -200px;
+			}
+			.oneShop h2{
+				float: left;
+				font-size: 22px;
+				margin-left: -106px;
+				margin-top: 38px;
+			}
+			.oneShop a{
+				font-size:24px;
+				color: red;
+
+			}
+			table{margin: 0 auto;}
+			table img{
+				width: 80px;
+				height: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="navcont center">
+				<span class="pos"><i class=""></i>送货地址：上海</span>
+				<ul class="navRight">
+					<li><a href="login.html">下午好,请 <span>登录</span></a></li>
+					<li><a href="register.html">注册</a></li>
+					<li><a href=""><i class=""></i>会员俱乐部</a></li>
+					<li><a href=""><i class=""></i>我的订单</a></li>
+				</ul>			
+			</div>
+		</div>
+		<div class="oneShop">
+			<img src="img/tu1.png" alt="" />
+			<h2>购物车,<a href="index.html">继续购物</a></h2>
+		</div>
+		
+	    <table border=1 width=800 align="center" cellspacing="0">
+	        <thead>
+	            <tr>
+	                <th>图片</th>
+	                <th>名字</th>
+	                <th>单价</th>
+	                <th>数量</th>
+	                <th>总价</th>
+	                <th>操作</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	        </tbody>
+	    </table>
+	</body>
+</html>
+<script type="text/javascript">
+
+    class Car{
+        constructor(){
+            this.tBody = document.querySelector("tbody");
+        }
+        getData(){
+            // 1.立即获取数据
+            if(localStorage.getItem("goodsMsg")){
+                this.gm = JSON.parse(localStorage.getItem("goodsMsg"));
+            }else{
+                this.gm = [];
+            }
+            // 2.渲染页面
+            this.display();
+        }
+        display(){
+            var str = "";
+            // 注意：给将来要添加事件的标签添加独立的标志
+            // 注意：记得将每个商品的编号拼接上去，方便将来删除或修改时找到对应商品
+            for(var i=0;i<this.gm.length;i++){
+                str += `<tr index="${this.gm[i].goodsId}">
+                            <td><img src="${this.gm[i].msg.img}" alt=""></td>
+                            <td>${this.gm[i].msg.name}</td>
+                            <td>${this.gm[i].msg.price}</td>
+                            <td><input type="number" min="1" value="${this.gm[i].num}" class="number"></td>
+                            <td>${ this.gm[i].msg.price * this.gm[i].num }</td>
+                            <td class="delete">删除</td>
+                        </tr>`;
+            }
+            this.tBody.innerHTML = str;
+        }
+        addEvent(){
+            var that = this;
+            // 3.利用事件委托绑定删除事件
+            this.tBody.onclick = function(eve){
+                var e = eve || window.event;
+                var tar = e.target || e.srcElement;
+                if(tar.className === "delete"){
+                    // 4.先获取当前点击删除按钮的商品的id
+                    that.id = tar.parentNode.getAttribute("index");
+                    // 5.删除DOM元素
+                    tar.parentNode.remove();
+                    // 6.删除本地存储中的数据
+                    that.changeData(function(i){
+                        that.gm.splice(i,1);
+                    });
+                }
+            }
+ 
+            // 7.通过事件委托绑定修改数量的事件：注意事件类型，的触发行为
+            this.tBody.oninput = function(eve){
+                var e = eve || window.event;
+                var tar = e.target || e.srcElement;
+                if(tar.className === "number"){
+                    // 8.获取要修改数量的商品的id
+                    that.id = tar.parentNode.parentNode.getAttribute("index");
+                    // 9.执行修改本地存储中数据的功能
+                    that.changeData(function(i){
+                        that.gm[i].num = tar.value;
+                    });
+ 
+                    // 10.每次修改数量，实时计算总价
+                    // console.log("计算总价");
+                    tar.parentNode.nextElementSibling.innerHTML = tar.value * tar.parentNode.previousElementSibling.innerHTML;
+                }
+            }
+        }
+        changeData(cb){
+            for(var i=0;i<this.gm.length;i++){
+                if(this.gm[i].goodsId === this.id){
+                    cb(i);
+                    break;
+                }
+            }
+            // 剔除掉之后，得再存回去，否则仅仅是在内存中修改，没有修改本地存储
+            localStorage.setItem("goodsMsg",JSON.stringify(this.gm));
+        }
+    }
+ 
+    var c = new Car();
+    c.getData();
+    c.addEvent();
+</script>

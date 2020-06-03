@@ -1,0 +1,1083 @@
+*{margin: 0;padding:0;font-size: 16px;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			.center{width: 1100px;margin: 0 auto;}
+			.nav{
+				height: 30px;
+				background: #E9E9E9;
+			}
+			.navcont{
+				height: 30px;
+			}
+			.nav .pos{
+				display: block;					
+				width: 120px;
+				float: left;
+				text-align: center;
+				line-height: 30px;
+				font-size: 13px;
+			}
+			.nav .navRight{
+				float: right;
+				text-align: center;
+				line-height: 30px;
+			}
+			.nav .navRight li{
+				float: left;
+			}
+			.nav .navRight li a{
+				display: block;
+				font-size: 13px;
+				width: 90px;
+			}
+			.nav .navRight li:nth-of-type(2) a{
+				color: #ccc;
+			}
+			.nav .navRight span{
+				font-size: 13px;
+				color: red;
+			}
+			.head{
+				height: 170px;
+			}
+			.head .headLeft{
+				float: left;
+			}
+			.head a .img1{
+				margin-left: -150px;
+				width: 150px;
+				height: 150px;
+			}
+			.head a .img2{
+				margin-right: 30px;
+				width: 150px;
+				height: 150px;
+			}
+			.headRight{
+				height: 170px;
+				float: right;
+			}
+			.headRight .ul1 li:first-child{
+				width: 500px;
+				height: 40px;
+				border:1px solid #ccc;
+				border-radius: 30px;
+			}
+			.headRight .ul1 li:first-child img{
+				width: 25px;
+				height: 25px;
+				margin-left: 467px;
+				margin-top: 10px;
+			}
+			.headRight .ul1 li:last-child{
+				width: 130px;
+				height: 40px;
+				border:1px solid #ccc;
+				border-radius: 30px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 18px;
+			}
+			.headRight .ul1 li{
+				float: left;
+				margin-left: 30px;
+				margin-top:65px ;
+			}
+			.headRight .ul2{
+				padding-left: 48px;
+			}
+			.headRight .ul2 li{
+				float: left;
+				margin-left: 10px;
+			}
+			.headRight .ul2 li a{
+				font-size: 15px;
+			}
+			#time{
+				font-size: 14px;
+			}
+			.select{
+				height: 50px;
+				position: relative;
+			}
+			.select li{
+				float: left;
+				line-height: 50px;
+				text-align: center;
+			}
+			.select .ul2{
+				width: 140px;
+				height: 50px;
+				background: red;
+			}
+			.select .ul2 li{
+				float: left;
+				text-align: center;
+				margin-left: 36px;
+			}
+			.select li a{
+				margin-left: 30px;
+			}
+			
+			.menu{
+				height:418px;
+				border: 1px solid red;
+				position: absolute;
+				top:250px;
+				left: 125px;
+				background: white;
+				display: none;
+			}
+			.menu>ul{
+				height:180px;
+				padding:17px;
+			}
+			.menu>ul>li:last-child{
+				border-right:none
+			}
+			.menu>ul>li{
+				width: 175px;
+				height:180px;
+				float: left;
+			}
+			.menu li ul li:nth-child(2){
+				text-align: left;
+				margin-left: 6px;
+				border-right: 1px solid #ccc;
+				width: 68px;
+				
+			}
+			.menu>ul>li>ul>li{
+				float: left;
+				width: 86px;
+				padding-top:6px;
+				
+			}
+			.menu>ul>li>ul>li a{
+				font-size: 13px;
+				color: black;
+			}
+			.menu>ul>li>a{
+				font-weight: 600;
+				color: #000000;
+				font-size: 15px;
+			}
+			.select .ul2:hover .menu{
+				display: block;
+			}
+			#bannerBox {	
+	        	width: 100%;           
+	            height: 400px;  
+	            position: relative;
+	        }
+	
+	        #img-box{
+	            position: absolute;
+	            left:0;
+	            top:0;
+	            width: 100%;
+	            height: 400px;            
+	        }
+			
+	        #img-box>img {
+	            position: absolute;
+	            left: 0;
+	            top: 0;
+	            width: 100%;
+	            height: 400px;
+	            opacity: 0;
+	        }
+	        
+	        #img-box>img:nth-child(1) {
+	            opacity: 1;
+	        }
+	
+	        #bannerBox>ul {
+	            list-style: none;
+	            position: absolute;
+	            left: 50%;
+	            transform: translateX(-50%);
+	            bottom: -11px;
+	            width: 380px;
+	            height: 50px;
+	        }	
+	        #bannerBox>ul>li {
+	            float: left;
+	            margin-top: 5px;
+	            width: 110px;
+	            height: 38px;
+	            margin-left: 10px;
+	            background-color: white;
+	           	text-align: center;
+	           	line-height: 38px;
+	        }
+	
+	        #bannerBox>ul>li:nth-of-type(1) {
+	            background-color: dimgrey;
+	        }
+			
+			.miaosha{
+				height: 420px;
+				margin-top: 30px;
+			}
+			.miaosha li:first-child{
+				background: #DD4A68;
+			}
+			.miaosha li:first-child img{
+				width: 120px;
+				height: 40px;
+				margin-top: 20px;
+			}
+			.miaosha li:first-child a{
+				
+			}
+			.miaosha li:first-child span{
+				display: inline-block;
+				font-size: 14px;
+				color: white;				
+			}
+			.miaosha h5{
+				color: white;
+				margin-top: 8px;
+			}	
+			#t span{
+				width: 37px;
+				height: 37px;
+				background: black;
+				color: white;
+				font-size: 23px;
+				text-align: center;
+				line-height: 37px;
+				border-radius: 12px;
+				margin: 7px;
+				
+			}		
+			.miaosha li{
+				float: left;
+				width: 220px;
+				height: 210px;
+				background: white;
+				text-align: center;
+			}
+			.miaosha li img{
+				width: 110px;
+				height: 110px;
+			}
+			.miaosha span{
+				display: block;
+				font-size: 14px;
+			}
+			.flash{
+				height: 450px;
+				background: white;
+				margin-top: 30px;
+			}
+			.flash .flashLeft{
+				width: 82%;
+				height: 400px;
+				padding-top: 30px;
+				position: relative;
+				float: left;
+			}
+			.flash .flashLeft a:first-child>span{
+				font-size: 25px;
+				margin-left: 20px;
+			}
+			.flash .flashLeft a span{
+				color: #55A532;
+			}
+			.flash .tu{
+				width: 170px;
+				height: 345px;
+				background:url(../img/xinxian.jpg);
+				margin-top: 20px;
+				background-size: 115%,100%;
+				margin-left: 20px;
+			}
+			.flash .tu ul{
+				padding-top: 12px;
+			}	
+			.flash .tu li{
+				float: left;
+				width: 69px;
+				height: 24px;
+				text-align: center;
+				line-height: 24px;
+				border: 1px solid white;
+				margin: 6px;
+			}
+			.flash .tu li a{
+				color: white;
+				font-size: 13px;
+			}
+			.flash .flashLeft .fruit{
+				position: absolute;
+				width: 360px;
+				height: 180px;
+				top:83px;
+				left:170px;
+				background: #E9E9E9;
+				margin-left: 20px;
+			}
+			.flash .flashLeft .fruit span:first-child{
+				display: block;
+				position: absolute;
+				top:40px;
+				left:18px;
+				font-size: 15px;
+				color: #63A35C;
+			}
+			.flash .flashLeft .fruit span:nth-child(2){
+				display: block;
+				position: absolute;
+				top:67px;
+				left:18px;
+				color: #55A532;
+				
+			}
+			.flash .flashLeft .fruit img{
+				width: 130px;
+				height: 120px;
+				position: absolute;
+				top:20px;
+				left:190px;
+			}
+			.flash .flashLeft .fruit .btn{
+				position: absolute;
+				top:106px;
+				left:18px;
+				border:1px solid #55A532;
+				color: #55A532;
+				width: 80px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+			.flash .flashLeft .rou{
+				position: absolute;
+				width: 360px;
+				height: 167px;
+				top:263px;
+				left:170px;
+				background: white;
+				margin-left: 20px;
+			}
+			.flash .flashLeft .rou ul{
+				width: 179px;
+				height: 187px;
+				float: left;
+				
+			}
+			.flash .flashLeft .rou ul li{
+				margin-left: 13px;
+			}
+			.flash .flashLeft .rou ul:first-child{
+				border-right: 1px solid #F5F2F0;
+			}
+			.flash .flashLeft .rou img{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				margin-left: 53px;
+			}
+			.flash .flashLeft .rou a{
+				display: block;
+				margin-top: 10px;
+				font-size: 14px;
+			}
+		
+			.flash .flashLeft .fruit1{
+				position: absolute;
+				width: 372px;
+				height: 170px;
+				top:263px;
+				right:0px;
+				background: #E9E9E9;
+			}
+			.flash .flashLeft .fruit1 span:first-child{
+				display: block;
+				position: absolute;
+				top:40px;
+				left:18px;
+				font-size: 15px;
+				color: #63A35C;
+			}
+			.flash .flashLeft .fruit1 span:nth-child(2){
+				display: block;
+				position: absolute;
+				top:67px;
+				left:18px;
+				color: #55A532;
+				
+			}
+			.flash .flashLeft .fruit1 img{
+				width: 130px;
+				height: 120px;
+				position: absolute;
+				top:20px;
+				left:190px;
+			}
+			.flash .flashLeft .fruit1 .btn{
+				position: absolute;
+				top:106px;
+				left:18px;
+				border:1px solid #55A532;
+				color: #55A532;
+				width: 80px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+			.flash .flashLeft .rou1{
+				position: absolute;
+				width: 372px;
+				height: 180px;
+				top:83px;
+				right: 0;
+				background: white;
+			}
+			.flash .flashLeft .rou1 ul{
+				width: 179px;
+				height: 167px;
+				float: left;	
+			}
+			.flash .flashLeft .rou1 ul li{
+				margin-left: 13px;
+			}
+			.flash .flashLeft .rou1 ul:first-child{
+				border-right: 1px solid #F5F2F0;
+			}
+			.flash .flashLeft .rou1 img{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				margin-left: 53px;
+			}
+			.flash .flashLeft .rou1 a{
+				display: block;
+				margin-top: 10px;
+				font-size: 14px;
+			}
+			.flash .flashRight{
+				width: 17%;
+				height: 440px;
+				float: right;
+				border-left: 1px solid #F5F2F0;	
+				padding-top: 10px;
+				background: white;
+			}
+			.flash .flashRight span{
+				display: block;
+				margin-top: 10px;
+				margin-left: 27px;
+			}
+			.flash .flashRight span:nth-child(2){
+				font-size: 13px;
+				color: #969896;
+			}
+			.flash .flashRight li{
+				width: 100px;
+				height: 90px;
+				margin-left: 50px;
+				background: #F5F2F0;
+				margin-top: 20px;
+			}
+			.flash .flashRight li img{
+				width: 70px;
+				height: 64px;
+				margin-left: 20px;
+			}
+			.flash .flashRight li h6{
+				width: 44px;
+				height: 20px;
+				text-align: center;
+				background: #CCCCCC;
+				margin-right:10px;
+				font-size: 14px;
+			}
+			.flash .flashRight li:first-child h6{
+				background: yellow;
+			}
+			.flash .flashRight li:nth-child(3) h6{
+				background: #DEB887;
+			}
+/*===============================================================*/			
+			
+			.perfect{
+				height: 450px;
+				background: white;
+				margin-top: 30px;
+			}
+			.perfect .flashLeft{
+				width: 82%;
+				height: 400px;
+				padding-top: 30px;
+				position: relative;
+				float: left;
+			}
+			.perfect .flashLeft a:first-child>span{
+				font-size: 25px;
+				margin-left: 20px;
+			}
+			.perfect .flashLeft a span{
+				color: violet;
+			}
+			.perfect .tu{
+				width: 170px;
+				height: 345px;
+				background:url(../img/nvren.jpg);
+				margin-top: 20px;
+				background-size: 115%,100%;
+				margin-left: 20px;
+			}
+			.perfect .tu ul{
+				padding-top: 12px;
+			}	
+			.perfect .tu li{
+				float: left;
+				width: 69px;
+				height: 24px;
+				text-align: center;
+				line-height: 24px;
+				border: 1px solid white;
+				margin: 6px;
+			}
+			.perfect .tu li a{
+				color: white;
+				font-size: 13px;
+			}
+			.perfect .flashLeft .fruit{
+				position: absolute;
+				width: 360px;
+				height: 180px;
+				top:83px;
+				left:170px;
+				background:antiquewhite;
+				margin-left: 20px;
+			}
+			.perfect .flashLeft .fruit span:first-child{
+				display: block;
+				position: absolute;
+				top:40px;
+				left:18px;
+				font-size: 15px;
+				color: #990055;
+			}
+			.perfect .flashLeft .fruit span:nth-child(2){
+				display: block;
+				position: absolute;
+				top:67px;
+				left:18px;
+				color: #A71D5D;
+				
+			}
+			.perfect .flashLeft .fruit img{
+				width: 130px;
+				height: 120px;
+				position: absolute;
+				top:20px;
+				left:190px;
+			}
+			.perfect .flashLeft .fruit .btn{
+				position: absolute;
+				top:106px;
+				left:18px;
+				border:1px solid #990055;
+				color: #A71D5D;
+				width: 80px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+			.perfect .flashLeft .rou{
+				position: absolute;
+				width: 360px;
+				height: 167px;
+				top:263px;
+				left:190px;
+				background: white;
+			}
+			.perfect .flashLeft .rou ul{
+				width: 179px;
+				height: 187px;
+				float: left;
+				
+			}
+			.perfect .flashLeft .rou ul li{
+				margin-left: 13px;
+			}
+			.perfect .flashLeft .rou ul:first-child{
+				border-right: 1px solid #F5F2F0;
+			}
+			.perfect .flashLeft .rou img{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				margin-left: 53px;
+			}
+			.perfect .flashLeft .rou a{
+				display: block;
+				margin-top: 10px;
+				font-size: 14px;
+			}
+		
+			.perfect .flashLeft .fruit1{
+				position: absolute;
+				width: 372px;
+				height: 170px;
+				top:260px;
+				right:0px;
+				background: antiquewhite;
+			}
+			.perfect .flashLeft .fruit1 span:first-child{
+				display: block;
+				position: absolute;
+				top:40px;
+				left:18px;
+				font-size: 15px;
+				color: #63A35C;
+			}
+			.perfect .flashLeft .fruit1 span:nth-child(2){
+				display: block;
+				position: absolute;
+				top:67px;
+				left:18px;
+				color: #55A532;
+				
+			}
+			.perfect .flashLeft .fruit1 img{
+				width: 130px;
+				height: 120px;
+				position: absolute;
+				top:20px;
+				left:190px;
+			}
+			.perfect .flashLeft .fruit1 .btn{
+				position: absolute;
+				top:106px;
+				left:18px;
+				border:1px solid #55A532;
+				color: #55A532;
+				width: 80px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+			.perfect .flashLeft .rou1{
+				position: absolute;
+				width: 372px;
+				height: 180px;
+				top:83px;
+				right: 0;
+				background: white;
+			}
+			.perfect .flashLeft .rou1 ul{
+				width: 179px;
+				height: 167px;
+				float: left;	
+			}
+			.perfect .flashLeft .rou1 ul li{
+				margin-left: 13px;
+			}
+			.perfect .flashLeft .rou1 ul:first-child{
+				border-right: 1px solid #F5F2F0;
+			}
+			.perfect .flashLeft .rou1 img{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				margin-left: 53px;
+			}
+			.perfect .flashLeft .rou1 a{
+				display: block;
+				margin-top: 10px;
+				font-size: 14px;
+			}
+			.perfect .flashRight{
+				width: 17%;
+				height: 440px;
+				float: right;
+				border-left: 1px solid #F5F2F0;	
+				padding-top: 10px;
+				background: white;
+			}
+			.perfect .flashRight span{
+				display: block;
+				margin-top: 10px;
+				margin-left: 27px;
+			}
+			.perfect .flashRight span:nth-child(2){
+				font-size: 13px;
+				color: #969896;
+				
+			}
+			.perfect .flashRight li{
+				width: 100px;
+				height: 90px;
+				margin-left: 50px;
+				background: #F5F2F0;
+				margin-top: 20px;
+			}
+			.perfect .flashRight li img{
+				width: 70px;
+				height: 64px;
+				margin-left: 20px;
+			}
+			.perfect .flashRight li h6{
+				width: 44px;
+				height: 20px;
+				text-align: center;
+				background: #CCCCCC;
+				margin-right:10px;
+				font-size: 14px;
+			}
+			.perfect .flashRight li:first-child h6{
+				background: yellow;
+			}
+			.perfect .flashRight li:nth-child(3) h6{
+				background: #DEB887;
+			}
+/*=========================================================*/
+			.life{
+				height: 450px;
+				background: white;
+				margin-top: 30px;
+			}
+			.life .flashLeft{
+				width: 82%;
+				height: 400px;
+				padding-top: 30px;
+				position: relative;
+				float: left;
+			}
+			.life .flashLeft a:first-child>span{
+				font-size: 25px;
+				margin-left: 20px;
+			}
+			.life .flashLeft a span{
+				color: #0086B3;
+			}
+			.life .tu{
+				width: 170px;
+				height: 345px;
+				background:url(../img/keji.jpg);
+				margin-top: 20px;
+				background-size: 115%,100%;
+				margin-left: 20px;
+			}
+			.life .tu ul{
+				padding-top: 12px;
+			}	
+			.life .tu li{
+				float: left;
+				width: 69px;
+				height: 24px;
+				text-align: center;
+				line-height: 24px;
+				border: 1px solid white;
+				margin: 6px;
+			}
+			.life .tu li a{
+				color: white;
+				font-size: 13px;
+			}
+			.life .flashLeft .fruit{
+				position: absolute;
+				width: 360px;
+				height: 180px;
+				top:83px;
+				left:190px;
+				background:#E9E9E9;
+			}
+			.life .flashLeft .fruit span:first-child{
+				display: block;
+				position: absolute;
+				top:40px;
+				left:18px;
+				font-size: 15px;
+				color: #3A87AD;
+			}
+			.life .flashLeft .fruit span:nth-child(2){
+				display: block;
+				position: absolute;
+				top:67px;
+				left:18px;
+				color: #3A87AD;
+				
+			}
+			.life .flashLeft .fruit img{
+				width: 130px;
+				height: 120px;
+				position: absolute;
+				top:20px;
+				left:190px;
+			}
+			.life .flashLeft .fruit .btn{
+				position: absolute;
+				top:106px;
+				left:18px;
+				border:1px solid #3A87AD;
+				color: #0077AA;
+				width: 80px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+			.life .flashLeft .rou{
+				position: absolute;
+				width: 360px;
+				height: 167px;
+				top:263px;
+				left:190px;
+				background: white;
+			}
+			.life .flashLeft .rou ul{
+				width: 179px;
+				height: 187px;
+				float: left;
+				
+			}
+			.life .flashLeft .rou ul li{
+				margin-left: 13px;
+			}
+			.life .flashLeft .rou ul:first-child{
+				border-right: 1px solid #F5F2F0;
+			}
+			.life .flashLeft .rou img{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				margin-left: 53px;
+			}
+			.life .flashLeft .rou a{
+				display: block;
+				margin-top: 10px;
+				font-size: 14px;
+			}
+		
+			.life .flashLeft .fruit1{
+				position: absolute;
+				width: 372px;
+				height: 170px;
+				top:260px;
+				right:0px;
+				background: #E9E9E9;
+			}
+			.life .flashLeft .fruit1 span:first-child{
+				display: block;
+				position: absolute;
+				top:40px;
+				left:18px;
+				font-size: 15px;
+				color: #0086B3;
+			}
+			.life .flashLeft .fruit1 span:nth-child(2){
+				display: block;
+				position: absolute;
+				top:67px;
+				left:18px;
+				color: #0086B3;				
+			}
+			.life .flashLeft .fruit1 img{
+				width: 130px;
+				height: 120px;
+				position: absolute;
+				top:20px;
+				left:190px;
+			}
+			.life .flashLeft .fruit1 .btn{
+				position: absolute;
+				top:106px;
+				left:18px;
+				border:1px solid #55A532;
+				color: #0086B3;
+				width: 80px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+			}
+			.life .flashLeft .rou1{
+				position: absolute;
+				width: 372px;
+				height: 180px;
+				top:83px;
+				right: 0;
+				background: white;
+			}
+			.life .flashLeft .rou1 ul{
+				width: 179px;
+				height: 167px;
+				float: left;	
+			}
+			.life .flashLeft .rou1 ul li{
+				margin-left: 13px;
+			}
+			.life .flashLeft .rou1 ul:first-child{
+				border-right: 1px solid #F5F2F0;
+			}
+			.life .flashLeft .rou1 img{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				margin-left: 53px;
+			}
+			.life .flashLeft .rou1 a{
+				display: block;
+				margin-top: 10px;
+				font-size: 14px;
+			}
+			.life .flashRight{
+				width: 17%;
+				height: 440px;
+				float: right;
+				border-left: 1px solid #F5F2F0;	
+				padding-top: 10px;
+				background: white;
+			}
+			.life .flashRight span{
+				display: block;
+				margin-top: 10px;
+				margin-left: 27px;
+			}
+			.life .flashRight span:nth-child(2){
+				font-size: 13px;
+				color: #969896;
+				
+			}
+			.life .flashRight li{
+				width: 100px;
+				height: 90px;
+				margin-left: 50px;
+				background: #F5F2F0;
+				margin-top: 20px;
+			}
+			.life .flashRight li img{
+				width: 70px;
+				height: 64px;
+				margin-left: 20px;
+			}
+			.life .flashRight li h6{
+				width: 44px;
+				height: 20px;
+				text-align: center;
+				background: #CCCCCC;
+				margin-right:10px;
+				font-size: 14px;
+			}
+			.life .flashRight li:first-child h6{
+				background: yellow;
+			}
+			.life .flashRight li:nth-child(3) h6{
+				background: #DEB887;
+			}
+			main{
+				height: 2947px;
+				background: #E9E9E9;
+			}
+			.bcg{
+				width: 390px;
+				height: 77px;
+				background: url(../img/dongni.png);
+				background-size:100%,70%;
+				margin-top: 30px;				
+			}
+			.bcg span{
+				display: block;
+				text-align: center;
+				padding-top: 62px;
+				color: #969896;
+			}	
+			.goodsBox{
+				height: 790px;
+				background: white;
+			}
+			#product-list{overflow: hidden;margin: 0px 12px;}
+	        #product-list .goods{width: 170px;margin-top:10px;float: left;border: solid 1px #ccc;box-sizing: border-box;text-align: center;margin-left: 7.5px;}
+	        .goods img{width: 80%;}
+	        #product-list .goods:hover{border: 2px solid red;}
+	        .goods span{display: block;margin: 10px 0;}
+	        .goods p{margin: 0;height: 40px;line-height: 20px;overflow: hidden;}
+	        .goods input{display: block;padding: 2px;margin: 0 auto;}		
+			.last{
+				height: 120px;
+				text-align: center;
+				line-height: 120px;
+			}
+			.last i{
+				display: inline-block;
+				width: 100px;
+				height: 1px;
+				background: #CCCCCC;
+				margin: 5px;
+			}
+			
+			footer{
+				height: 600px;
+			}
+			.footerTop{
+				height: 200px;
+				border-bottom: 1px solid #E9E9E9;
+			}
+			.footerTop ul{
+				height: 200px;
+				margin-top: 20px;
+			}
+			.footerTop ul>li{
+				float: left;
+				margin-left: 3px;
+				margin-top: 15px;
+			} 
+			.footerTop ul li>span{
+				display: block;
+				width: 200px;
+				height: 22px;
+			}
+			.footerLi li:nth-child(2){
+				margin-top: 25px;
+			}
+			.footerLi span:nth-child(2){
+				color: #ccc;
+				font-size:14px;
+			}
+			.footerLi span:first-child{
+				font-weight: 600;
+			}
+			.footerBotm{
+				height: 250px;
+			}
+			.footerBotm .Botmleft{
+				width: 700px;
+				height: 250px;
+				float: left;
+			}
+			.footerBotm .Botmleft>ul>li{
+				float: left;
+				width: 175px;
+			}
+			.footerBotm .Botmleft ul{
+				margin-top:15px;
+			}
+			.footerBotm .Botmleft .w{
+				font-size: 13px;
+				font-weight: 600;
+				color: gray;
+				margin-bottom: 6px;
+			}
+			.footerBotm .Botmleft>ul>li a{
+				font-size: 13px;
+				color: grey;
+				margin-top: 4px;
+			}
+			.footerBotm .Botmright{
+				float: left;
+			}
+			.Botmright>ul>li{
+				float: left;
+				margin-left: 44px;
+				margin-top: 30px;
+			}
+			.Botmright li{
+				font-size: 13px;
+				font-weight: 600;
+				color: gray;
+			}

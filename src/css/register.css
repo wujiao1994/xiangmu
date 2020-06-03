@@ -1,0 +1,92 @@
+	*{margin: 0;padding: 0;}
+	li{list-style: none;}
+	a{text-decoration: none;}
+	header{
+		height:100px;
+		border-top:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+		font-size: 13px;
+	}
+	header>a{
+		display: block;
+		width: 300px;
+		height:60px;
+		margin-left:27px;
+		text-align: center;
+		margin-top:20px ;
+		float: left;
+	}
+	header>a img{
+		width: 140px;
+		height:60px;
+	}
+	header ul{
+		float: right;
+		width: 400px;
+		height:100px;				
+	}
+	header ul li{
+		float: left;
+		margin-top: 26px;
+		margin-left: 18px;
+	}
+	header ul li:first-child{
+		color: #696969;
+	}
+	#hover{
+		color: #0086B3;
+		font-size: 14px;
+	}
+	#hover:hover{
+		color: #DF5000;
+	}
+	.box{
+		width: 800px;
+		height: 500px;
+		margin-left: 430px;
+		margin-top: 30px;
+	}
+	h2{
+		width: 350px;
+		text-align: center;
+		margin-bottom: 10px;
+		margin-left: 100px;
+	}
+	input{
+		width: 350px;
+		height: 50px;
+		margin-top: 10px;
+		
+	}
+	#btnReg{
+		width: 356px;
+		height: 50px;
+		background: red;
+		border: 0;
+		color: white;
+		font-weight: 600;
+		font-size: 17px;
+		margin-left: 99px;
+	}
+	.box span{
+		margin-left: 30px;
+		font-size: 13px;
+	}
+	#pass-box{
+		display: none;
+		width: 330px;
+		height: 20px;
+		margin-left: 100px;
+		margin-top: 1px;
+	}
+	#pass-box span{
+		display: inline-block;
+		width: 80px;
+		height: 20px;
+	}
+	#message-box{
+		width: 350px;
+		height: 50px;
+		text-align: right;
+		margin-left: 100px;
+	}

@@ -1,0 +1,104 @@
+*{margin: 0;padding: 0;font-size: 13px;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			header{
+				height:100px;
+				border-top:1px solid #ccc;
+				border-bottom:1px solid #ccc;
+			}
+			header>a{
+				display: block;
+				width: 300px;
+				height:60px;
+				margin-left:27px;
+				text-align: center;
+				margin-top:20px ;
+				float: left;
+			}
+			header>a img{
+				width: 140px;
+				height:60px;
+			}
+			header ul{
+				float: right;
+				width: 400px;
+				height:100px;				
+			}
+			header ul li{
+				float: left;
+				margin-top: 26px;
+				margin-left: 18px;
+			}
+			header ul li:first-child{
+				color: #696969;
+			}
+			#hover{
+				color: #0086B3;
+				font-size: 14px;
+			}
+			#hover:hover{
+				color: #DF5000;
+			}
+			.cont{
+				height: 700px;
+				background: #fcfcfc;
+			}
+			.cont .contLeft{
+				float: left;
+				width: 400px;			
+				margin-left: 200px;
+				margin-top: 80px;
+			}
+			.contRight{
+				width: 420px;
+				height: 460px;
+				background: white;
+				margin-top: 20px;
+				margin-right: 200px;
+				float: right;	
+			}
+			.loginBox{
+				width: 360px;
+				height: 348px;
+				margin-top: 60px;	
+				margin-left: 34px;	
+			}
+			.loginBox p{
+				display: inline-block;
+				width: 174px;
+				height: 27px;
+				line-height: 27px;
+			}
+			.loginBox p:nth-child(2){
+				text-align:right;
+			}
+			.loginBox input{
+				width: 348px;
+				height: 60px;
+				margin-top: 5px;
+				
+			}
+			#btnLogin{
+				width: 348px;
+				height: 60px;
+				border: 0;
+				background:red;
+				color: white;
+				font-size: 17px;
+			}
+			#code{
+				width: 245px;
+				height: 60px;
+			}
+			#codeSpan{
+				display: inline-block;
+				width: 102px;
+				height: 39px;
+				text-align: center;
+				background: greenyellow;
+				padding-top:16px;
+			}
+			.loginBox .co{
+				color: #696969;
+				margin-top: 5px;
+			}
