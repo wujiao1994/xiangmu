@@ -2,26 +2,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		
+		<title></title>		
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 		<style>
-			#menu{
-				
-				height: 50px;
-				margin: 0 126px;
-				background: #C7254E;
-				margin-top: 20px;
-				line-height: 50px;
-			}
-			#menu a{
-				display: inline-block;
-				width: 100px;
-				height: 50px;
-				border-right: 1px solid #ccc;
-				color: white;
-				text-align: center;
-			}
 			
 		</style>
 	</head>
@@ -29,10 +12,16 @@
 		<div class="nav">
 			<div class="navcont center">
 				<div id="posBox">
-					<span class="pos">
-						<i class=""></i>送货地址：上海
-					</span>
-					
+					<span>送货地址：上海</span>
+					<ul>
+						<li class="active">送货地址：北京</li>
+						<li>送货地址：广西</li>
+						<li>送货地址：深圳</li>
+						<li>送货地址：广州</li>
+						<li>送货地址：陕西</li>
+						<li>送货地址：湖南</li>
+						
+					</ul>
 				</div>
 				
 				<ul class="navRight">
@@ -40,7 +29,8 @@
 					<li><a href="register.html">注册</a></li>
 					<li><div id="time"></div></li>
 					
-				</ul>			
+				</ul>
+			
 			</div>
 		</div>
 		<header class="center head">
@@ -51,7 +41,7 @@
 			<div class="headRight">
 				<ul class="ul1">
 					<li><a href=""><img src="img/sou.jpg" alt="" /></a></li>
-					<li><i></i><a href="shopping.html">购物车</li></a>
+					<li><i></i><a href="shoppingCart.html">购物车</li></a>
 				</ul>
 				<ul class="ul2">
 					<li><a href="">风衣男</a></li>
@@ -520,7 +510,7 @@
 						<ul>
 							<li><a href="">泰国进口龙眼</a></li>
 							<li>￥31.9</li>
-							<a href="show.html"></a><img src="img/longyan.jpg"/>
+							<a href="show.html"><img src="img/longyan.jpg"/></a>
 						</ul>
 					</div>
 					<div class="fruit1">
@@ -538,7 +528,7 @@
 						<ul>
 							<li><a href="">泰国进口龙眼</a></li>
 							<li>￥31.9</li>
-							<img src="img/longyan.jpg"/>
+							<a href="show.html"><img src="img/longyan.jpg"/></a>
 						</ul>
 					</div>
 				</div>
@@ -577,12 +567,12 @@
 						<ul>
 							<li><a href="">范思哲香水</a></li>
 							<li>￥35.9</li>
-							<img src="img/rou.jpg"/>
+							<a href="show.html"><img src="img/rou.jpg"/></a>
 						</ul>
 						<ul>
 							<li><a href="">雅诗兰黛眼霜</a></li>
 							<li>￥31.9</li>
-							<img src="img/longyan.jpg"/>
+							<a href="show.html"><img src="img/longyan.jpg"/></a>
 						</ul>
 					</div>
 					<div class="fruit1">
@@ -595,12 +585,12 @@
 						<ul>
 							<li><a href="">横都澳洲牛腩</a></li>
 							<li>￥35.9</li>
-							<img src="img/rou.jpg"/>
+							<a href="show.html"><img src="img/rou.jpg"/></a>
 						</ul>
 						<ul>
 							<li><a href="">泰国进口龙眼</a></li>
 							<li>￥31.9</li>
-							<img src="img/longyan.jpg"/>
+							<a href="show.html"><img src="img/longyan.jpg"/></a>
 						</ul>
 					</div>
 				</div>
@@ -693,7 +683,7 @@
 				</div>
 			</div>
 			<!-- 产品菜单结束 -->
-			<div class="goodsBox center">
+			<div class="goodsBox">
 				<div id="product-list">
 	    		</div>
 			</div>
@@ -795,17 +785,14 @@
 				</div>
 			</div>
 		</footer>
-		<div class="Top" style="width: 70px;height:70px; text-align: center;line-height: 70px; position: fixed; right: 20px;top: 400px; border: 1px #FD3F31 solid; color: #FD3F31; cursor: pointer; border-radius: 50%; display: none;">
+		<div class="Top" style="width: 70px;height:70px; text-align: center;line-height: 70px; position: fixed; right: 20px;top: 400px; border: 1px pink solid; color: black; cursor: pointer; border-radius: 50%; display: none;background: pink;">
         	返回顶部
-    	</div>
-    	
-		
-
+    </div>
 		
 	</body>
 </html>
 
-<script src="js/untils.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/utils.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/move.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/index.js" type="text/javascript" charset="utf-8"></script>

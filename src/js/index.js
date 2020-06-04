@@ -1,5 +1,4 @@
-//	时间
-
+//	时间32
 var box=document.getElementById("time");
 	box.innerHTML= change(new Date);
 	setInterval(function(){
@@ -125,22 +124,22 @@ var box=document.getElementById("time");
 //====================================================
 //	倒计时
 	var oNum = document.getElementById("num");
-	var oNum1 = document.getElementById("num1");
-	function go(){
-		var miao=setInterval(function(){
-			oNum.innerHTML--;			
-			if(oNum.innerHTML==0){
-				clearInterval(miao);
-				var fen=setInterval(function(){
-					oNum1.innerHTML--;
-					if(oNum1.innerHTML==0){
-						clearInterval(fen);
-					}
-				},1000)
-			}
-		},1000)
-	}
-	go();
+ 	var oNum1 = document.getElementById("num1");
+ 	function go(){
+	var miao=setInterval(function(){
+	   oNum.innerHTML--;   
+	   if(oNum.innerHTML==0){
+	    clearInterval(miao);
+	    var fen=setInterval(function(){
+	     oNum1.innerHTML--;
+	     if(oNum1.innerHTML==0){
+	      clearInterval(fen);
+	     }
+	    },1000)
+	   }
+	  },1000)
+	 }
+ go();
 //=========================================
 //	商品列表
 	var data = [{
@@ -219,9 +218,19 @@ var box=document.getElementById("time");
 	        name:"贝亲(Pigeon) 婴儿棉签棉棒 细轴棉棒 耳孔清洁棉签 肚脐清洁棉签 400支装 KA53",
 	        goodsId:"afa876"
 	    },{
-	    	img:"https://img13.360buyimg.com/n7/s230x230_jfs/t1/136647/39/623/211619/5ecfa42cEc842c7c3/f40ebabf67454719.jpg!cc_230x230.jpg",
-	        price:"￥1899.00",
+	        img:"https://img11.360buyimg.com/n7/s230x230_jfs/t1/122385/10/3218/254159/5ecfe107E6efa8655/02ca7014b9e1f94a.jpg!cc_230x230.jpg",
+	        price:"￥19.00",
+	        name:"三只松鼠小零食儿童",
+	        goodsId:"afa876"
+	    },{
+	        img:"https://img20.360buyimg.com/n7/s230x230_jfs/t4483/318/2899787596/359687/6064d5ea/58f4675fN8ef6b24e.jpg!cc_230x230.jpg",
+	        price:"￥29.00",
 	        name:"贝亲(Pigeon) 婴儿棉签棉棒 细轴棉棒 耳孔清洁棉签 肚脐清洁棉签 400支装 KA53",
+	        goodsId:"afa876"
+	    },{
+	        img:"https://img20.360buyimg.com/n7/s230x230_jfs/t1/74409/20/14108/464964/5db8c03bEa8488164/0f5521a3d7eb0f73.jpg!cc_230x230.jpg",
+	        price:"￥199.00",
+	        name:"中国金币 2020版熊猫银纪念币 2020年熊猫银币 全新 30克银币单枚送红盒",
 	        goodsId:"afa876"
 	    },{
 	    	img:"https://img13.360buyimg.com/n7/s230x230_jfs/t1/136647/39/623/211619/5ecfa42cEc842c7c3/f40ebabf67454719.jpg!cc_230x230.jpg",
@@ -229,8 +238,28 @@ var box=document.getElementById("time");
 	        name:"贝亲(Pigeon) 婴儿棉签棉棒 细轴棉棒 耳孔清洁棉签 肚脐清洁棉签 400支装 KA53",
 	        goodsId:"afa876"
 	    },{
-	    	img:"https://img13.360buyimg.com/n7/s230x230_jfs/t1/136647/39/623/211619/5ecfa42cEc842c7c3/f40ebabf67454719.jpg!cc_230x230.jpg",
-	        price:"￥1899.00",
+	        img:"https://img20.360buyimg.com/n7/s230x230_jfs/t1/74409/20/14108/464964/5db8c03bEa8488164/0f5521a3d7eb0f73.jpg!cc_230x230.jpg",
+	        price:"￥199.00",
+	        name:"中国金币 2020版熊猫银纪念币 2020年熊猫银币 全新 30克银币单枚送红盒",
+	        goodsId:"afa876"
+	    },{
+	        img:"https://img20.360buyimg.com/n7/s230x230_jfs/t4483/318/2899787596/359687/6064d5ea/58f4675fN8ef6b24e.jpg!cc_230x230.jpg",
+	        price:"￥29.00",
+	        name:"贝亲(Pigeon) 婴儿棉签棉棒 细轴棉棒 耳孔清洁棉签 肚脐清洁棉签 400支装 KA53",
+	        goodsId:"afa876"
+	    },{
+	        img:"https://img11.360buyimg.com/n7/s230x230_jfs/t1/122385/10/3218/254159/5ecfe107E6efa8655/02ca7014b9e1f94a.jpg!cc_230x230.jpg",
+	        price:"￥19.00",
+	        name:"三只松鼠小零食儿童",
+	        goodsId:"afa876"
+	    },{
+	        img:"https://img20.360buyimg.com/n7/s230x230_jfs/t4483/318/2899787596/359687/6064d5ea/58f4675fN8ef6b24e.jpg!cc_230x230.jpg",
+	        price:"￥29.00",
+	        name:"贝亲(Pigeon) 婴儿棉签棉棒 细轴棉棒 耳孔清洁棉签 肚脐清洁棉签 400支装 KA53",
+	        goodsId:"afa876"
+	    },{
+	        img:"https://img20.360buyimg.com/n7/s230x230_jfs/t4483/318/2899787596/359687/6064d5ea/58f4675fN8ef6b24e.jpg!cc_230x230.jpg",
+	        price:"￥29.00",
 	        name:"贝亲(Pigeon) 婴儿棉签棉棒 细轴棉棒 耳孔清洁棉签 肚脐清洁棉签 400支装 KA53",
 	        goodsId:"afa876"
 	    }];
@@ -307,9 +336,9 @@ var box=document.getElementById("time");
 			$("html,body").animate({scrollTop:0},600); 
 		})
 	 $(".Top").mouseover(function () {
-		       $(".Top").css({color:'white',background:'green'});
+		       $(".Top").css({color:'white',background:'red'});
 		    }).mouseout(function () {
-		    	$(".Top").css({color:'#FD3F31',background:'white'});
+		    	$(".Top").css({color:'white',background:'pink'});
             })
             //返回顶部显示
 		$(window).on('scroll',function(){
@@ -320,3 +349,51 @@ var box=document.getElementById("time");
 		        $('.Top').hide();
 		    }
 		})
+//============================================
+	var obtn=document.querySelector("#posBox span");
+	var oul=document.querySelector("#posBox ul");
+	var oli=oul.children;
+	var morenindex=0; /*默认索引是0;*/
+   	var n=0;  /*状态码0表示显示,1表示隐藏*/
+   	for(var i=0;i<oli.length;i++){
+		oli[i].className="" ;
+	}
+	obtn.onclick=function(eve){
+		var e=eve||event;
+		stopBubble(e);   /*阻止冒泡*/
+		if(n==0){
+			for(var i=0;i<oli.length;i++){
+				oli[i].className="" ;
+			}
+			oul.style.display="block";
+			n=1;   /*显示功能,同时修改状态码*/
+		}else{
+			oul.style.display="none";
+			n=0;
+		}
+	}
+	document.onclick=function(){
+		oul.style.display="none";
+		n=0;  /*点击空白隐藏功能,同时修改状态码*/
+	}
+	for(var i=0;i<oli.length;i++){
+		oli[i].setAttribute("num",i);
+		oli[i].onmousemove=function(){
+			for(var j=0;j<oli.length;j++){
+				oli[j].className="" /*清空所有li的样式*/
+			}
+			this.className="active"; /*给当前鼠标移入的li添加样式*/
+		}
+		oli[i].onclick=function(){
+			morenindex=this.getAttribute("num");/*点击后，要修改默认的索引改成点击的li的索引，li没有索引，提前编号*/
+			obtn.innerHTML=this.innerHTML;  /*把当前鼠标移入的li内容放到上面显示区域*/
+		}
+		
+	}
+	function stopBubble(e){
+		if(e.stopPropagation){
+			e.stopPropagation();
+		}else{
+			e.cancelBubble = true;
+		}
+	}

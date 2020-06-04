@@ -1,11 +1,97 @@
 	*{margin: 0;padding: 0;}
 	li{list-style: none;}
 	a{text-decoration: none;}
+	.chong{
+    		width: 100%;
+    		height: 100%;
+    		background: black;
+    		position: relative;
+	    }
+	.box1{width: 15px;height: 15px;background-image: url(../img/萤火虫.gif);; background-size:100% 100%;position: absolute;}
+	footer{
+		width: 100%;
+		height: 500px;
+		margin: 0 auto;
+		background: #0086B3;
+	}
+	.footerTop{
+		height: 200px;
+		border-bottom: 1px solid #E9E9E9;
+	}
+	.footerTop ul{
+		height: 200px;
+		margin-top: 40px;
+	}
+	.footerTop ul>li{
+		float: left;
+		margin-left: 23px;
+		margin-top: 15px;
+	} 
+	.footerTop ul li>span{
+		display: block;
+		width: 200px;
+		height: 22px;
+	}
+	.footerLi li:nth-child(2){
+		margin-top: 25px;
+	}
+	.footerLi span:nth-child(2){
+		color: #C9302C;
+		font-size:14px;
+	}
+	.footerLi span:first-child{
+		font-weight: 600;
+	}
+	.footerBotm{
+		height: 250px;
+	}
+	.footerBotm .Botmleft{
+		width: 700px;
+		height: 250px;
+		float: left;
+		margin-left: 65px;
+	}
+	.footerBotm .Botmleft>ul>li{
+		float: left;
+		width: 250px;
+	}
+	.footerBotm .Botmleft ul{
+		margin-top:15px;
+		width: 1000px;
+	}
+	.footerBotm .Botmleft .w{
+		font-size: 13px;
+		font-weight: 600;
+		color: black;
+		margin-bottom: 6px;
+	}
+	.footerBotm .Botmleft>ul>li a{
+		font-size: 13px;
+		color: black;
+		margin-top: 4px;
+	}
+	.footerBotm .Botmright{
+		float: right;
+		margin-right: 75px;
+	}
+	.Botmright>ul>li{
+		float: left;
+		margin-left: 73px;
+		margin-top: 40px;
+	}
+	.Botmright li{
+		font-size: 13px;
+		font-weight: 600;
+		color: black;
+	}
 	header{
 		height:100px;
+		width: 100%;
 		border-top:1px solid #ccc;
-		border-bottom:1px solid #ccc;
+		border-bottom:1px solid #red;
 		font-size: 13px;
+		background:white;
+	
 	}
 	header>a{
 		display: block;
@@ -19,6 +105,7 @@
 	header>a img{
 		width: 140px;
 		height:60px;
+		
 	}
 	header ul{
 		float: right;
@@ -29,9 +116,10 @@
 		float: left;
 		margin-top: 26px;
 		margin-left: 18px;
+		color: black;
 	}
 	header ul li:first-child{
-		color: #696969;
+		color: black;
 	}
 	#hover{
 		color: #0086B3;
@@ -43,14 +131,16 @@
 	.box{
 		width: 800px;
 		height: 500px;
-		margin-left: 430px;
-		margin-top: 30px;
+		margin-left: 372px;
+		margin-top: 50px;
 	}
-	h2{
+	h6{
 		width: 350px;
 		text-align: center;
 		margin-bottom: 10px;
 		margin-left: 100px;
+		color: white;
+		font-size: 27px;
 	}
 	input{
 		width: 350px;
@@ -71,6 +161,7 @@
 	.box span{
 		margin-left: 30px;
 		font-size: 13px;
+		color: white;
 	}
 	#pass-box{
 		display: none;
@@ -85,8 +176,13 @@
 		height: 20px;
 	}
 	#message-box{
-		width: 350px;
+		width: 355px;
 		height: 50px;
-		text-align: right;
+		text-align: center;
 		margin-left: 100px;
+		margin-top: 10px;
+		color: black;
+		line-height: 50px;
+		font-size: 20px;
+		
 	}

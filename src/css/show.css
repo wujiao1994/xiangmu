@@ -415,6 +415,12 @@
 				text-align: center;
 				line-height: 35px;
 			}
+			footer .footerLeft span img{
+				width:137px ;
+				height: 137px;
+				margin-left: 35px;
+				margin-top: 14px;
+			}
 			footer .footerLeft>span:first-child{
 				display: block;
 				width: 220px;

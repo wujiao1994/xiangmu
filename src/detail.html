@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/detail.css">
+  
+</head>
+
+<body>
+  <header>
+			<a href="index.html"><img src="img/loginlogo.jpg" alt="" /></a>
+			<ul>
+				<li>您好,欢迎光临1号店!</i>
+				<li><a href="login.html" id="hover">请登录</a></li>
+				<li>帮助中心</li>
+			</ul>
+	</header>
+
+  <div class="container"></div>
+
+  <script src="js/jquery.min.js"></script>
+  
+  <script>
+    
+    const arr = decodeURI(window.location.search).substring(1).split('=');
+	
+	
+	
+
+    $.ajax({
+      url: 'goods_select_list_pdo.php',
+      type: 'post',
+      data: { goods_id: arr[1] },
+      dataType: 'json',
+      success(res) {
+    
+        let str = `
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">商品详细信息</h3>
+          </div>
+          <div class="panel-body">
+            <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object" src="${res.goods_small_logo}" alt="...">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">${res.goods_name}</h4>
+                <p>
+                  <i class="glyphicon glyphicon-yen"></i>
+                  <span>${res.goods_price}</span>
+                </p>
+                <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-default">XL</button>
+                  <button type="button" class="btn btn-default">L</button>
+                  <button type="button" class="btn btn-default">M</button>
+                  <button type="button" class="btn btn-default">S</button>
+                  <button type="button" class="btn btn-default">XS</button>
+                </div>
+                <p>
+                  <a href="javascript:;" class="btn btn-warning btn-lg" role="button">立即购买</a>
+                  <a href="javascript:;" name="incar" class="btn btn-danger btn-lg" role="button">加入购物车</a>
+                </p>
+              </div>
+            </div>
+            <ul class="nav nav-tabs">
+              <li role="presentation" class="active"><a href="#">商品详细信息</a></li>
+              <li role="presentation"><a href="#">商品参数信息</a></li>
+              <li role="presentation"><a href="#">相关商品</a></li>
+            </ul>
+            <div>
+                ${res.goods_introduce}
+            </div>
+          </div>
+        </div>
+        
+        `;
+
+        // 将str写入到div中
+        $('.container').html(str);
+
+       
+        setCart(res);
+      }
+    })
+
+    function setCart(res) {
+
+      $('.container').on('click', '[name="incar"]', function () {
+        // 判断,是否有 登录状态码 是否是 1
+        if (localStorage.getItem('login') != 1) {
+          // 登录状态码不是 1 , 证明没有登录 , 要跳转登录页面
+          // 弹出一个确认框,如果点击确定,跳转登录页面,点击取消,不做操作
+          let bool = window.confirm('您还没有登录,是否现在就去登录');
+          if (bool == true) {
+            // 如果点击确定,也就是返回值是true,跳转登录页面
+            window.location.href = `./login.html?url=${window.location}`;
+          }
+        } else {
+          
+
+          if (localStorage.getItem('cart') == null) {
+           
+            let cartObj = {};
+
+            // 向对象中写入数据 
+
+            // 购买产品信息
+            cartObj.msg = res;
+            // 购买数量
+            cartObj.num = 1;
+            // 购买状态
+            cartObj.bool = true;
+
+            
+            const cart = [];
+            // 将商品信息对象,写入到数组中
+            cart.push(cartObj);
+            // 将数组写入到localStorage 中
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+          } else {
+           
+            let bool = true;
+
+
+            // localStorage中存储的数据信息是 json串 的形式 
+            // 需要转化会对应的形式
+
+            // console.log( JSON.parse(localStorage.getItem('cart'))  )
+
+            let newCart = JSON.parse(localStorage.getItem('cart'));
+
+            newCart.forEach(function (item) {
+              // item中存储的就是每一个购物车商品的具体信息
+              // 就是 商品的 id编号信息
+              // goods_id 的数据类型 是字符串类型
+              // 如果 item中存储的 已有的商品信息 和 res 中存储的要写入的商品信息相同
+              if (item.msg.goods_id == res.goods_id) {
+                // 证明要写入的商品,已经存在,要在购买商品数据量上加1;
+                item.num++;
+                // 当前修改的是已有商品购买的数据
+                // 只是修改的是 newCart 中的数据,不是 localStorage 中的数据
+                // localStorage 中的数据,必须通过 setItem()语法来重新设定
+
+                // 如果商品已经存在
+                // 给开关变量赋值为false
+                bool = false;
+
+                // forEach语句,不支持break
+              }
+            })
+
+
+           
+
+            if (bool == true) {
+              // 建立对象,存储当前商品的信息
+              let cartObj = {};
+
+              // 向对象中写入数据 
+
+              // 购买产品信息
+              cartObj.msg = res;
+              // 购买数量
+              cartObj.num = 1;
+              // 购买状态
+              cartObj.bool = true;
+
+              // 将新的查新信息,作为一个新的单元,写入到newCart中
+              newCart.push(cartObj);
+            }
+
+            
+            localStorage.setItem('cart', JSON.stringify(newCart));
+          }
+
+          // 跳转至购物车页面
+          window.location.href = 'shoppingCart.html';
+        }
+
+      })
+    }
+
+  
+
+
+    /*
+    
+    
+
+    事件委托方法2
+    判断 事件对象e 点击的目标
+    通过 事件对象e 获取的点击目标 是 JavaScript标签对象形式
+    $('.container').click(function(e){
+      console.log(e.target.getAttribute('name'));
+    })
+
+    定义成函数的语法,在ajax中,请求成功调用
+
+    function setCart(res){
+      // 判断点击的是否是 incar 按钮
+      if( e.target.getAttribute('name') == 'incar' ){
+        // 如果没有登录状态码
+        if (localStorage.getItem('login') != 1){
+            let bool = window.confirm('您还没有登录,是否现在就去登录');
+            if (bool == true) {
+              // 携带当前地址参数,跳转到登录页面
+              window.location.href = `./login.html?url=${window.location}`;
+            }
+            
+        // 如果有登录状态码
+        }else{
+          // 判断,如果购物车内容为空
+          if (localStorage.getItem('cart') == null) {
+            // 新增数据内容
+            let cartObj = {};
+            cartObj.msg = res;
+            cartObj.num = 1;
+            cartObj.bool = true;
+
+            // 购物车数据数组
+            const cart = [];
+            cart.push(cartObj);
+
+            // 写入localStorage,json串形式
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+          }else{
+            // 有购物车数据
+            
+            // 定义存储结果变量
+            let bool = true;
+
+            // 存储 购物车数据信息
+            let newCart = JSON.parse(localStorage.getItem('cart'));
+
+            // 循环遍历
+            newCart.forEach(function (item) {
+              
+              // 如果购物车id信息和写入数据id信息相同
+              if (item.msg.goods_id == res.goods_id) {
+                // 证明要写入的商品,已经存在,要在购买商品数据量上加1;
+                item.num++;
+   
+                // 给开关变量赋值为false
+                bool = false;
+              }
+            })
+
+            // 如果已有数据不存在
+            if (bool == true) {
+              // 建立对象,存储当前商品的信息
+              let cartObj = {};
+
+              // 购买产品信息
+              cartObj.msg = res;
+              // 购买数量
+              cartObj.num = 1;
+              // 购买状态
+              cartObj.bool = true;
+
+              newCart.push(cartObj);
+            }
+
+            // 需要将新的数据信息,写入到 localStorage 中,也就是重新设定 cart 中的数据
+            localStorage.setItem('cart', JSON.stringify(newCart));
+          }
+        }
+      }
+    }
+
+
+
+
+
+
+    */
+
+  </script>
+  <div id="foot1"></div>
+  <div id="foot2"></div>
+  
+  
+  
+ <footer>
+			<div class="footerTop center">
+				<ul>
+					<li>
+						<ul class="footerLi">
+							<li><img src="https://d8.yihaodianimg.com/N05/M0B/39/F3/CgQI0lWskgmADBnsAAAPZvcSh3E68900.jpg" alt="" /></li>
+							<li><span>正品保证</span><span>正品行货，放心选购</span></li>
+						</ul>
+						
+					</li>
+					<li>
+						<ul class="footerLi">
+							<li><img src="https://d6.yihaodianimg.com/N05/M09/96/23/ChEbulWsk4iADa_aAAAM544hHN818600.jpg"" /></li>
+							<li><span>满99包邮</span><span>满99元，免运费</span></li>
+						</ul>
+						
+					</li>
+					<li>
+						<ul class="footerLi">
+							<li><img src="https://d8.yihaodianimg.com/N05/M0B/39/F3/CgQI0lWskgmADBnsAAAPZvcSh3E68900.jpg" alt="" /></li>
+							<li><span>售后无忧</span><span>七天无理由退货</span></li>
+						</ul>
+						
+					</li>
+					<li>
+						<ul class="footerLi">
+							<li><img src="https://d8.yihaodianimg.com/N05/M0B/39/F3/CgQI0lWskgmADBnsAAAPZvcSh3E68900.jpg" alt="" /></li>
+							<li><span>准时送达</span><span>收货时间由你确定</span></li>
+						</ul>
+						
+					</li>
+				</ul>
+			</div>
+			<div class="footerBotm center">
+				<div class="Botmleft">
+					<ul>
+						<li>
+							<ul>
+								<li class="w">新手入门</li>
+								<li><a href="">购物流程</a></li>
+								<li><a href="">会员制度</a></li>
+								<li><a href="">订单查询</a></li>
+								<li><a href="">服务协议及隐私说明</a></li>
+								<li><a href="">网站地图</a></li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li class="w">支付方式</li>
+								<li><a href="">货到付款</a></li>
+								<li><a href="">网上支付</a></li>
+								<li><a href="">礼品卡支付</a></li>
+								<li><a href="">其他支付</a></li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li class="w">配送服务</li>
+								<li><a href="">配送进度查询</a></li>
+								<li><a href="">与验收商品验货</a></li>
+								
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li class="w">相关规则</li>
+								<li><a href="">平台规则</a></li>
+								<li><a href="">退换货服务</a></li>
+								<li><a href="">发票支付</a></li>
+								<li><a href="">帮助中心</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="Botmright">
+					<ul>
+						<li>
+							<ul>
+								<li>APP更优惠</li>
+								<li><img src="https://img.yihaodianimg.com/front-homepage/index/images/qryhd.png?1=1" alt="" /></li>
+							</ul>
+						</li>
+						<li>
+							<ul>
+								<li>加微信查订单</li>
+								<li><img src="https://img30.360buyimg.com/img/jfs/t15403/130/239695202/5772/891e9fb1/5a2798bbN479da3df.jpg" alt="" /></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+		<div class="Top" style="width: 70px;height:70px; text-align: center;line-height: 70px; position: fixed; right: 20px;top: 400px; border: 1px pink solid; color: black; cursor: pointer; border-radius: 50%; display: none;background: pink;">
+        	返回顶部
+    </div>
+</body>
+
+</html>
+<script src="js/detail.js" type="text/javascript" charset="utf-8"></script>

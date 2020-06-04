@@ -1,0 +1,124 @@
+*{margin: 0;padding: 0;font-size: 13px;}
+			li{list-style: none;}
+			a{text-decoration: none;}
+			header{
+				height:100px;
+				border-top:1px solid #ccc;
+				border-bottom:1px solid #ccc;
+			}
+			header>a{
+				display: block;
+				width: 300px;
+				height:60px;
+				margin-left:27px;
+				text-align: center;
+				margin-top:20px ;
+				float: left;
+			}
+			header>a img{
+				width: 140px;
+				height:60px;
+			}
+			header ul{
+				float: right;
+				width: 400px;
+				height:100px;				
+			}
+			header ul li{
+				float: left;
+				margin-top: 26px;
+				margin-left: 18px;
+			}
+			header ul li:first-child{
+				color: #696969;
+			}
+			#hover{
+				color: #0086B3;
+				font-size: 14px;
+			}
+			#hover:hover{
+				color: #DF5000;
+			}
+	  footer{
+	  	width: 1142px;
+				height: 500px;
+				margin: 0 auto;
+				background: #0086B3;
+			}
+			.footerTop{
+				height: 200px;
+				border-bottom: 1px solid #E9E9E9;
+			}
+			.footerTop ul{
+				height: 200px;
+			}
+			.footerTop ul>li{
+				float: left;
+				margin-left: 6px;
+				margin-top: 15px;
+			} 
+			.footerTop ul li>span{
+				display: block;
+				width: 200px;
+				height: 22px;
+			}
+			.footerLi li:nth-child(2){
+				margin-top: 25px;
+			}
+			.footerLi span:nth-child(2){
+				color: #C9302C;
+				font-size:14px;
+			}
+			.footerLi span:first-child{
+				font-weight: 600;
+			}
+			.footerBotm{
+				height: 250px;
+			}
+			.footerBotm .Botmleft{
+				width: 700px;
+				height: 250px;
+				float: left;
+				margin-left: 65px;
+			}
+			.footerBotm .Botmleft>ul>li{
+				float: left;
+				width: 175px;
+			}
+			.footerBotm .Botmleft ul{
+				margin-top:15px;
+			}
+			.footerBotm .Botmleft .w{
+				font-size: 13px;
+				font-weight: 600;
+				color: black;
+				margin-bottom: 6px;
+			}
+			.footerBotm .Botmleft>ul>li a{
+				font-size: 13px;
+				color: black;
+				margin-top: 4px;
+			}
+			.footerBotm .Botmright{
+				float: left;
+			}
+			.Botmright>ul>li{
+				float: left;
+				margin-left: 44px;
+				margin-top: 30px;
+			}
+			.Botmright li{
+				font-size: 13px;
+				font-weight: 600;
+				color: black;
+			}
+.media img {
+  width: 300px;
+  height: 300px;
+}
+
+p {
+  font-size: 60px;
+  color: red
+}
+
